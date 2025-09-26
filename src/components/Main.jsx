@@ -45,7 +45,9 @@ const Main = () => {
       )}
 
       {!loading && recipe && (
-        <MockRecipe ingredients={ingredients} properCase={properCase} />
+        <section ref={recipeSection}>
+          <MockRecipe ingredients={ingredients} properCase={properCase} />
+        </section>
       )}
     </main>
   );
