@@ -6,6 +6,7 @@ import MockRecipe from "./MockRecipe";
 const Main = () => {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState("");
+  const [loading, setLoading] = useState(false);
   const recipeSection = useRef(null);
 
   useEffect(() => {
@@ -29,10 +30,21 @@ const Main = () => {
           ingredients={ingredients}
           setRecipe={setRecipe}
           properCase={properCase}
+          loading={loading}
+          setLoading={setLoading}
         />
       ) : null}
 
-      {recipe && (
+      {loading && (
+        <p
+          className="mt-6 text-center text-gray-500 animate-pulse"
+          aria-live="polite"
+        >
+          Generating recipe...
+        </p>
+      )}
+
+      {!loading && recipe && (
         <MockRecipe ingredients={ingredients} properCase={properCase} />
       )}
     </main>

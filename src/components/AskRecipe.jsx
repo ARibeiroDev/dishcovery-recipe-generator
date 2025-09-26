@@ -1,12 +1,24 @@
 import Button from "./Button";
 
-const AskRecipe = ({ ingredients, setRecipe, properCase }) => {
+const AskRecipe = ({
+  ingredients,
+  setRecipe,
+  properCase,
+  loading,
+  setLoading,
+}) => {
   const getRecipe = () => {
+    setLoading(true);
+    setRecipe("");
+
     const ingredientsList = properCase(
       ingredients.map((item) => `- ${item}`).join("\n")
     );
 
-    setRecipe(ingredientsList);
+    setTimeout(() => {
+      setLoading(false);
+      setRecipe(ingredientsList);
+    }, 2000);
   };
 
   return (
@@ -17,7 +29,7 @@ const AskRecipe = ({ ingredients, setRecipe, properCase }) => {
           Generate a recipe from your list of ingredients.
         </p>
       </section>
-      <Button onClick={getRecipe} textContent="Get recipe" />
+      <Button onClick={getRecipe} textContent="Get recipe" disabled={loading} />
     </section>
   );
 };

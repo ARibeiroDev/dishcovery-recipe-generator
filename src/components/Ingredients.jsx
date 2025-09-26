@@ -1,7 +1,13 @@
 import IngredientsList from "./IngredientsList";
 import AskRecipe from "./AskRecipe";
 
-const Ingredients = ({ ingredients, setRecipe, properCase }) => {
+const Ingredients = ({
+  ingredients,
+  setRecipe,
+  properCase,
+  loading,
+  setLoading,
+}) => {
   return (
     <article className="dark:text-[#CCC5B9] mt-4" aria-live="polite">
       <h2 className="mt-6 mb-2 text-2xl font-light">Your ingredients:</h2>
@@ -13,6 +19,8 @@ const Ingredients = ({ ingredients, setRecipe, properCase }) => {
           ingredients={ingredients}
           setRecipe={setRecipe}
           properCase={properCase}
+          loading={loading}
+          setLoading={setLoading}
         />
       )}
     </article>
