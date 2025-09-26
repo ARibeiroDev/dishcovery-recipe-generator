@@ -48,7 +48,7 @@ These changes are not part of the original course and were added independently t
 
 ## 📸 Demo
 
-🌐 [Live Demo on Render](#) _(Link Coming Soon...)_
+🌐 [Live Demo on Render](https://dishcovery-recipe-generator.onrender.com) 
 🔧 _Mock recipe only (due to API key restrictions)_
 
 ---
